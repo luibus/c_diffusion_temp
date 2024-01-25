@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-/*#define NR 40   //tamaño de la malla
+/*#define NR 40   //tamaÃ±o de la malla
 #define NRHO 20
 #define NZ 80*/
 int NZ=50;
@@ -76,7 +76,7 @@ int main (int argc, char* argv[]) {
 
     double extremz=1;
     deltaZ=extremz/NZ; // punto de paso en altura en el cilindro
-    double extremRHO=2*3.1416; //extremo del angulo luego tendré que hacer condiciones de dirichlecht al acabar
+    double extremRHO=2*3.1416; //extremo del angulo luego tendrÃ© que hacer condiciones de dirichlecht al acabar
     deltaRHO=extremRHO/NRHO; // punto de paso en altura en el cilindro
 
     deltaT=0.0001;//////////////////////////////////////////////////////////////////                        AQUI
@@ -112,7 +112,7 @@ printf("\n antes de iterar");
 																										//EMPIESA LA ITERACION
 for (int s=0;s<25000;s++){//tiempo
 //	printf("\n s: %8.4d", s);
-for (int i=0;i<NZ;i++){//quizá son -2
+for (int i=0;i<NZ;i++){//quizÃ¡ son -2
 	 for (int j=0;j<NR;j++){
 		 for (int g=0;g<NRHO;g++){
 			 if(i>0&&i<NZ-1&&j>0&&j<NR-1&&g>0&&g<NRHO-1){
@@ -180,7 +180,7 @@ tempnew[i][j][g]=temp[i][j][g]+n*(((temp[i+1][j][g]+temp[i-1][j][g]-2*temp[i][j]
 				}
 				}
    }/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-}}			//aquí tengo ya mi primera matriz temp para el primer s
+}}			//aquÃ­ tengo ya mi primera matriz temp para el primer s
 if ((contador==5||contador==2)&&s<5500){//escribo una linea de temp en fila en un archivo lineal de temperatura en el tiempo
 	for (int i=1;i<NZ-1;i++){
 		int j=2;
@@ -190,15 +190,15 @@ if ((contador==5||contador==2)&&s<5500){//escribo una linea de temp en fila en u
 		}
 	write3 (linealtemp,0);
 	}
-for (int i=0;i<NZ;i++){//quizá son -2 el del instante actual ya lo actualizo tras todas las iteraciones
+for (int i=0;i<NZ;i++){//quizÃ¡ son -2 el del instante actual ya lo actualizo tras todas las iteraciones
 	 for (int j=0;j<NR;j++){
 		 for (int g=0;g<NRHO;g++){
 				 temp[i][j][g]=tempnew[i][j][g];
 			 }}}
 
-//ENTROPÍA en principio funciona SIGUIENTE PASO guardar una línea de producción local de entropía para varios momentos del t y plotear su evolucion
+//ENTROPÃA en principio funciona SIGUIENTE PASO guardar una lÃ­nea de producciÃ³n local de entropÃ­a para varios momentos del t y plotear su evolucion
 //una sola linea
-//ahora queda hacer esto para la linea 2 2 de temperatura y ver su evolucion y hacer la entropía total luego habrá que jugar con las temperaturas del foco
+//ahora queda hacer esto para la linea 2 2 de temperatura y ver su evolucion y hacer la entropÃ­a total luego habrÃ¡ que jugar con las temperaturas del foco
 if (contador==5){
 	for (int i=1;i<NZ-1;i++){
 		int j=2;
@@ -217,7 +217,7 @@ contador =contador+1;
 //el caso de la entropia total lo haremos solo para el caso lineal, si no ver como se hace integral al volumen numerica
 if(s==621){
 	printf("\n se esta haciendo");
-for (int i=0;i<NZ;i++){//quizá son -2
+for (int i=0;i<NZ;i++){//quizÃ¡ son -2
 	 for (int j=0;j<NR;j++){
 		 for (int g=0;g<NRHO;g++){
 			 if(i>0&&i<NZ-1&&j>0&&j<NR-1&&g>0&&g<NRHO-1){
@@ -270,7 +270,7 @@ void write (double temp[NZ][NR][NRHO], double gradcuad[NZ][NR][NRHO],int n) {
            fprintf(fout, "\n");
        }
     fclose(fout);
-}//mas o menos bien lo que pasa es que en los distintos angulos en el radio fluctua la temperatura SOLUCION hacerlo todo en un mismo bucle y definir los limites de lo que se usa ya que lo que estoy viendo son los vestigios de las dos líneas y del centro
+}//mas o menos bien lo que pasa es que en los distintos angulos en el radio fluctua la temperatura SOLUCION hacerlo todo en un mismo bucle y definir los limites de lo que se usa ya que lo que estoy viendo son los vestigios de las dos lÃ­neas y del centro
 
 void write2 (double temp[NZ], int n) {
     int i;
@@ -278,7 +278,7 @@ void write2 (double temp[NZ], int n) {
     fout2 = fopen("output1_animation_entro_lineal_cylinder_extra2.txt", "a");
     for (i=1; i<NZ-1; i++) {
         	//for (g=0; g<NRHO; g++) {
-            fprintf(fout2, "%.16f\t", temp[i]); //estarán en linea todas las i y en la sguiente linea las del siguiente instante
+            fprintf(fout2, "%.16f\t", temp[i]); //estarÃ¡n en linea todas las i y en la sguiente linea las del siguiente instante
     }
  fprintf(fout2, "\n");
     fclose(fout2);
@@ -290,7 +290,7 @@ void write3 (double temp[NZ], int n) {
     fout3 = fopen("output1_animation_temp_lineal_cylinder_extra2.txt", "a");
     for (i=1; i<NZ-1; i++) {
         	//for (g=0; g<NRHO; g++) {
-            fprintf(fout3, "%.16f\t", temp[i]); //estarán en linea todas las i y en la sguiente linea las del siguiente instante
+            fprintf(fout3, "%.16f\t", temp[i]); //estarÃ¡n en linea todas las i y en la sguiente linea las del siguiente instante
     }
  fprintf(fout3, "\n");
     fclose(fout3);
@@ -300,7 +300,7 @@ void write4 (double temp, int n) {
     FILE* fout4;
     fout4 = fopen("output1_animation_entro_total_cylinder_extra2.txt", "a");
 
-            fprintf(fout4, "%.16f\t", temp); //estarán en linea todas las i y en la sguiente linea las del siguiente instante
+            fprintf(fout4, "%.16f\t", temp); //estarÃ¡n en linea todas las i y en la sguiente linea las del siguiente instante
 
 
     fclose(fout4);
