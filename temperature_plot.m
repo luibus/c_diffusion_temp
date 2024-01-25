@@ -62,7 +62,7 @@ zlabel('Z')
 %        end
 %    end
 %end
-%title('Entropía local en el cilindro')
+%title('EntropÃ­a local en el cilindro')
 %xlabel('X')
 %ylabel('Y') 
 %zlabel('Z')
