@@ -66,7 +66,7 @@ The Matlab files:
 
 - entropy_plot.m plots the linear evolution and total entropy together with the linear temperature evolution
 
-STEEPS:
+STEPS:
 - Change parameters as desired
 - Execute cylinder_heat_diff.c
 - Execute temperature_plot.m and entropy_plot.m for plots making sure to be on the same repository as the output from the c program
